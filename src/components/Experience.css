@@ -1,0 +1,944 @@
+/* =========================================================
+   EXPERIENCE SECTION
+========================================================= */
+
+.experience-section {
+  position: relative;
+  overflow: hidden;
+
+  background: #080808;
+}
+
+/* =========================================================
+   BACKGROUND WORD
+========================================================= */
+
+.experience-bg-word {
+  position: absolute;
+
+  top: 18%;
+  left: -2%;
+
+  z-index: 0;
+
+  color: rgba(255, 255, 255, 0.018);
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: clamp(6rem, 15vw, 16rem);
+  font-weight: 700;
+  line-height: 0.8;
+
+  letter-spacing: -0.09em;
+
+  pointer-events: none;
+  user-select: none;
+}
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.experience-intro {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.65fr);
+
+  gap: 80px;
+
+  align-items: end;
+
+  margin-bottom: 100px;
+}
+
+.experience-intro-left {
+  max-width: 780px;
+}
+
+.experience-intro-left .section-label {
+  margin-bottom: 26px;
+}
+
+.experience-intro-left .section-title {
+  margin: 0;
+
+  font-size: clamp(3.5rem, 7vw, 7rem);
+  line-height: 0.92;
+
+  letter-spacing: -0.055em;
+}
+
+.experience-intro-left .section-title span {
+  color: rgba(255, 255, 255, 0.32);
+}
+
+.experience-intro-right {
+  padding-bottom: 8px;
+}
+
+.experience-intro-right p {
+  max-width: 440px;
+
+  margin: 0 0 34px;
+
+  color: rgba(255, 255, 255, 0.5);
+
+  font-size: 0.98rem;
+  line-height: 1.85;
+}
+
+.experience-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  color: rgba(255, 255, 255, 0.3);
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.61rem;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.experience-meta-line {
+  width: 35px;
+  height: 1px;
+
+  background: rgba(255, 255, 255, 0.22);
+}
+
+/* =========================================================
+   EXPERIENCE LIST
+========================================================= */
+
+.experience-list {
+  position: relative;
+  z-index: 2;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* =========================================================
+   EXPERIENCE ITEM
+========================================================= */
+
+.experience-item {
+  --experience-x: 50%;
+  --experience-y: 50%;
+  --experience-rotate-x: 0deg;
+  --experience-rotate-y: 0deg;
+
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 90px minmax(0, 1fr);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  overflow: hidden;
+
+  opacity: 0;
+  transform: translateY(40px);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.45s ease;
+}
+
+.experience-item.visible {
+  opacity: 1;
+
+  transform:
+    translateY(0)
+    rotateX(var(--experience-rotate-x))
+    rotateY(var(--experience-rotate-y));
+}
+
+.experience-item-0 {
+  transition-delay: 0.05s;
+}
+
+.experience-item-1 {
+  transition-delay: 0.15s;
+}
+
+.experience-item-2 {
+  transition-delay: 0.25s;
+}
+
+.experience-item:hover {
+  background: rgba(255, 255, 255, 0.018);
+}
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.experience-item-number {
+  position: relative;
+  z-index: 2;
+
+  padding-top: 38px;
+
+  color: rgba(255, 255, 255, 0.23);
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+
+  transition:
+    color 0.35s ease,
+    transform 0.35s ease;
+}
+
+.experience-item:hover .experience-item-number {
+  color: rgba(141, 234, 255, 0.8);
+
+  transform: translateX(4px);
+}
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.experience-item-main {
+  position: relative;
+  z-index: 2;
+
+  padding: 38px 30px 34px 0;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.experience-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+.experience-type {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: rgba(255, 255, 255, 0.32);
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.58rem;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.experience-header h3 {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.9);
+
+  font-size: clamp(1.7rem, 3vw, 2.7rem);
+  font-weight: 500;
+  line-height: 1;
+
+  letter-spacing: -0.045em;
+
+  transition:
+    color 0.35s ease,
+    transform 0.35s ease;
+}
+
+.experience-item:hover .experience-header h3 {
+  color: #ffffff;
+
+  transform: translateX(4px);
+}
+
+/* =========================================================
+   COMPANY
+========================================================= */
+
+.experience-company {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-top: 14px;
+
+  color: rgba(255, 255, 255, 0.38);
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.65rem;
+
+  letter-spacing: 0.04em;
+}
+
+.experience-company-dot {
+  width: 3px;
+  height: 3px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.experience-external-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 46px;
+  height: 46px;
+
+  flex-shrink: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  color: rgba(255, 255, 255, 0.3);
+
+  font-size: 0.95rem;
+
+  transition:
+    border-color 0.35s ease,
+    color 0.35s ease,
+    background 0.35s ease,
+    transform 0.35s ease;
+}
+
+.experience-item:hover .experience-external-icon {
+  border-color: rgba(141, 234, 255, 0.4);
+
+  background: rgba(141, 234, 255, 0.05);
+
+  color: #8deaff;
+
+  transform: translate(3px, -3px);
+}
+
+/* =========================================================
+   DESCRIPTION ROW
+========================================================= */
+
+.experience-description-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 210px;
+
+  gap: 70px;
+
+  margin-top: 40px;
+  padding-top: 28px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.experience-description {
+  max-width: 700px;
+
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.5);
+
+  font-size: 0.9rem;
+  line-height: 1.85;
+}
+
+/* =========================================================
+   FOCUS
+========================================================= */
+
+.experience-focus > span {
+  display: block;
+
+  margin-bottom: 15px;
+
+  color: rgba(255, 255, 255, 0.28);
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.58rem;
+
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.experience-focus-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 7px;
+}
+
+.experience-focus-list span {
+  padding: 6px 9px;
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+
+  color: rgba(255, 255, 255, 0.4);
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.55rem;
+
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+.experience-focus-list span:hover {
+  border-color: rgba(141, 234, 255, 0.3);
+
+  background: rgba(141, 234, 255, 0.04);
+
+  color: #8deaff;
+}
+
+/* =========================================================
+   RESPONSIBILITIES
+========================================================= */
+
+.experience-responsibilities {
+  margin-top: 45px;
+}
+
+.experience-responsibilities-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-bottom: 18px;
+
+  color: rgba(255, 255, 255, 0.3);
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.6rem;
+
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.experience-responsibilities-label span:first-child {
+  color: #8deaff;
+}
+
+.experience-responsibility-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  column-gap: 55px;
+  row-gap: 13px;
+}
+
+.experience-responsibility {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+
+  gap: 10px;
+
+  padding-top: 12px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.experience-responsibility:hover {
+  border-color: rgba(141, 234, 255, 0.2);
+
+  transform: translateX(4px);
+}
+
+.experience-responsibility-index {
+  padding-top: 2px;
+
+  color: rgba(255, 255, 255, 0.22);
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.57rem;
+}
+
+.experience-responsibility p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.48);
+
+  font-size: 0.78rem;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.experience-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 25px;
+
+  margin-top: 38px;
+  padding-top: 22px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.experience-stack {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 7px;
+}
+
+.experience-stack span {
+  color: rgba(255, 255, 255, 0.34);
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.58rem;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.experience-stack span:not(:last-child)::after {
+  content: "/";
+  margin-left: 7px;
+
+  color: rgba(255, 255, 255, 0.14);
+}
+
+.experience-stack span:hover {
+  color: #8deaff;
+
+  transform: translateY(-2px);
+}
+
+.experience-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: rgba(255, 255, 255, 0.28);
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.55rem;
+
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.experience-status span {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #8deaff;
+
+  box-shadow: 0 0 10px rgba(141, 234, 255, 0.8);
+
+  animation: experienceStatusPulse 2s ease-in-out infinite;
+}
+
+@keyframes experienceStatusPulse {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+/* =========================================================
+   POINTER GLOW
+========================================================= */
+
+.experience-pointer-glow {
+  position: absolute;
+
+  top: var(--experience-y);
+  left: var(--experience-x);
+
+  width: 320px;
+  height: 320px;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(141, 234, 255, 0.055),
+    transparent 68%
+  );
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition: opacity 0.35s ease;
+}
+
+.experience-item:hover .experience-pointer-glow {
+  opacity: 1;
+}
+
+/* =========================================================
+   BOTTOM
+========================================================= */
+
+.experience-bottom {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  padding-top: 30px;
+}
+
+.experience-bottom-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: rgba(255, 255, 255, 0.32);
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.6rem;
+
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.experience-live-dot {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #8deaff;
+
+  box-shadow: 0 0 12px rgba(141, 234, 255, 0.7);
+
+  animation: experienceStatusPulse 2s ease-in-out infinite;
+}
+
+.experience-bottom-flow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  color: rgba(255, 255, 255, 0.28);
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.58rem;
+
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.experience-bottom-flow i {
+  color: rgba(255, 255, 255, 0.16);
+
+  font-size: 0.62rem;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+  .experience-intro {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+
+    margin-bottom: 65px;
+  }
+
+  .experience-intro-right {
+    padding-bottom: 0;
+  }
+
+  .experience-intro-right p {
+    max-width: 620px;
+  }
+
+  .experience-item {
+    grid-template-columns: 65px minmax(0, 1fr);
+  }
+
+  .experience-description-row {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+  .experience-focus {
+    padding-top: 5px;
+  }
+
+  .experience-responsibility-list {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+  .experience-bg-word {
+    top: 25%;
+    left: -10%;
+
+    font-size: 7rem;
+  }
+
+  .experience-intro {
+    gap: 28px;
+
+    margin-bottom: 48px;
+  }
+
+  .experience-intro-left .section-title {
+    font-size: clamp(3rem, 15vw, 5rem);
+  }
+
+  .experience-intro-right p {
+    font-size: 0.88rem;
+    line-height: 1.75;
+  }
+
+  .experience-meta {
+    flex-wrap: wrap;
+  }
+
+  .experience-item {
+    grid-template-columns: 42px minmax(0, 1fr);
+
+    transform: translateY(28px);
+  }
+
+  .experience-item.visible {
+    transform: translateY(0);
+  }
+
+  .experience-item-number {
+    padding-top: 27px;
+
+    font-size: 0.57rem;
+  }
+
+  .experience-item-main {
+    padding: 27px 10px 28px 0;
+  }
+
+  .experience-header {
+    gap: 18px;
+  }
+
+  .experience-type {
+    margin-bottom: 8px;
+
+    font-size: 0.5rem;
+  }
+
+  .experience-header h3 {
+    font-size: 1.45rem;
+  }
+
+  .experience-company {
+    gap: 7px;
+
+    margin-top: 11px;
+
+    font-size: 0.55rem;
+    line-height: 1.7;
+  }
+
+  .experience-external-icon {
+    width: 35px;
+    height: 35px;
+
+    font-size: 0.72rem;
+  }
+
+  .experience-description-row {
+    gap: 25px;
+
+    margin-top: 28px;
+    padding-top: 22px;
+  }
+
+  .experience-description {
+    font-size: 0.78rem;
+    line-height: 1.75;
+  }
+
+  .experience-focus > span {
+    margin-bottom: 11px;
+
+    font-size: 0.52rem;
+  }
+
+  .experience-focus-list span {
+    padding: 5px 7px;
+
+    font-size: 0.5rem;
+  }
+
+  .experience-responsibilities {
+    margin-top: 32px;
+  }
+
+  .experience-responsibilities-label {
+    font-size: 0.52rem;
+  }
+
+  .experience-responsibility {
+    grid-template-columns: 23px minmax(0, 1fr);
+
+    gap: 7px;
+  }
+
+  .experience-responsibility-index {
+    font-size: 0.52rem;
+  }
+
+  .experience-responsibility p {
+    font-size: 0.7rem;
+    line-height: 1.65;
+  }
+
+  .experience-footer {
+    align-items: flex-start;
+    flex-direction: column;
+
+    margin-top: 30px;
+    padding-top: 18px;
+  }
+
+  .experience-stack {
+    gap: 5px;
+  }
+
+  .experience-stack span {
+    font-size: 0.52rem;
+  }
+
+  .experience-stack span:not(:last-child)::after {
+    margin-left: 5px;
+  }
+
+  .experience-status {
+    font-size: 0.5rem;
+  }
+
+  .experience-bottom {
+    gap: 18px;
+
+    padding-top: 25px;
+  }
+
+  .experience-bottom-flow {
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    font-size: 0.5rem;
+  }
+
+  .experience-pointer-glow {
+    display: none;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+  .experience-header {
+    align-items: flex-start;
+  }
+
+  .experience-external-icon {
+    width: 31px;
+    height: 31px;
+
+    flex-shrink: 0;
+  }
+
+  .experience-company {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 2px;
+  }
+
+  .experience-company-dot {
+    display: none;
+  }
+
+  .experience-description {
+    font-size: 0.74rem;
+  }
+
+  .experience-responsibility p {
+    font-size: 0.67rem;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .experience-item,
+  .experience-item.visible,
+  .experience-item:hover,
+  .experience-header h3,
+  .experience-external-icon,
+  .experience-responsibility,
+  .experience-stack span {
+    transition: none;
+    transform: none;
+  }
+
+  .experience-status span,
+  .experience-live-dot {
+    animation: none;
+  }
+
+  .experience-item {
+    opacity: 1;
+  }
+
+  .experience-pointer-glow {
+    display: none;
+  }
+}

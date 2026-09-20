@@ -1,0 +1,1025 @@
+/* =========================================================
+   CERTIFICATIONS
+========================================================= */
+
+.certifications-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.certifications-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================================================
+   BACKGROUND TEXT
+========================================================= */
+
+.certifications-background-text {
+  position: absolute;
+
+  top: 10%;
+  right: -7%;
+
+  color: rgba(255, 255, 255, 0.018);
+
+  font-size: clamp(7rem, 17vw, 17rem);
+  font-weight: 800;
+
+  line-height: 0.8;
+  letter-spacing: -0.09em;
+
+  white-space: nowrap;
+
+  pointer-events: none;
+  user-select: none;
+}
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.certifications-heading {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.4fr)
+    minmax(280px, 0.6fr);
+
+  gap: 80px;
+
+  align-items: end;
+
+  margin-bottom: 75px;
+}
+
+.certifications-heading .section-title {
+  margin-bottom: 0;
+}
+
+.certifications-heading .section-title span {
+  color: var(--text-muted);
+}
+
+.certifications-heading .section-description {
+  max-width: 420px;
+
+  margin: 0;
+
+  justify-self: end;
+}
+
+/* =========================================================
+   MAIN LAYOUT
+========================================================= */
+
+.certifications-layout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.55fr)
+    minmax(300px, 0.65fr);
+
+  gap: 24px;
+
+  align-items: stretch;
+}
+
+/* =========================================================
+   MAIN CERTIFICATION AREA
+========================================================= */
+
+.certifications-main {
+  display: flex;
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+/* =========================================================
+   CERTIFICATE CARD
+========================================================= */
+
+.certificate-card {
+  --certificate-x: 0px;
+  --certificate-y: 0px;
+  --certificate-glow-x: 50%;
+  --certificate-glow-y: 50%;
+
+  position: relative;
+
+  min-height: 390px;
+
+  padding: 38px 40px;
+
+  overflow: hidden;
+
+  border: 1px solid var(--border);
+
+  background: var(--surface);
+
+  transform:
+    translate3d(
+      var(--certificate-x),
+      var(--certificate-y),
+      0
+    );
+
+  opacity: 0;
+
+  transition:
+    transform 0.22s ease-out,
+    border-color 0.35s ease,
+    background 0.35s ease,
+    opacity 0.8s ease;
+}
+
+.certificate-card.visible {
+  opacity: 1;
+}
+
+.certificate-card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.035),
+      rgba(255, 255, 255, 0.01)
+    );
+}
+
+.certificate-card::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 1px;
+  height: 0;
+
+  background: var(--cyan);
+
+  transition: height 0.5s ease;
+}
+
+.certificate-card:hover::before {
+  height: 100%;
+}
+
+/* =========================================================
+   POINTER GLOW
+========================================================= */
+
+.certificate-pointer-glow {
+  position: absolute;
+
+  left: var(--certificate-glow-x);
+  top: var(--certificate-glow-y);
+
+  width: 260px;
+  height: 260px;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(34, 211, 238, 0.055),
+      transparent 70%
+    );
+
+  filter: blur(18px);
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition: opacity 0.3s ease;
+}
+
+.certificate-card:hover .certificate-pointer-glow {
+  opacity: 1;
+}
+
+/* =========================================================
+   INDEX
+========================================================= */
+
+.certificate-index {
+  position: absolute;
+
+  top: 30px;
+  right: 35px;
+
+  color: rgba(255, 255, 255, 0.1);
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 0.65rem;
+
+  letter-spacing: 0.08em;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.certificate-card:hover .certificate-index {
+  color: var(--cyan);
+
+  transform: translateY(-3px);
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.certificate-header {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding-right: 45px;
+}
+
+.certificate-label {
+  color: var(--cyan);
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 0.54rem;
+
+  letter-spacing: 0.14em;
+}
+
+.certificate-status {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color: var(--text-muted);
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 0.52rem;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+.certificate-status-dot {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #65d68b;
+
+  box-shadow:
+    0 0 10px rgba(101, 214, 139, 0.45);
+}
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.certificate-main {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns: 80px minmax(0, 1fr);
+
+  gap: 28px;
+
+  align-items: start;
+
+  margin-top: 72px;
+}
+
+.certificate-symbol {
+  width: 68px;
+  height: 68px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(34, 211, 238, 0.18);
+
+  color: var(--cyan);
+
+  font-size: 1.35rem;
+
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    background 0.4s ease;
+}
+
+.certificate-card:hover .certificate-symbol {
+  transform:
+    translateY(-4px)
+    rotate(4deg);
+
+  border-color:
+    rgba(34, 211, 238, 0.35);
+
+  background:
+    rgba(34, 211, 238, 0.035);
+}
+
+.certificate-content h3 {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+  font-weight: 600;
+
+  line-height: 1.08;
+
+  letter-spacing: -0.05em;
+
+  transition:
+    transform 0.35s ease,
+    color 0.35s ease;
+}
+
+.certificate-card:hover .certificate-content h3 {
+  transform: translateX(4px);
+}
+
+.certificate-provider {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-top: 17px;
+
+  color: var(--text-secondary);
+
+  font-size: 0.82rem;
+}
+
+.certificate-provider i {
+  color: var(--text-muted);
+
+  font-size: 0.78rem;
+}
+
+.certificate-content p {
+  max-width: 680px;
+
+  margin: 22px 0 0;
+
+  color: var(--text-muted);
+
+  font-size: 0.82rem;
+
+  line-height: 1.8;
+}
+
+/* =========================================================
+   BOTTOM
+========================================================= */
+
+.certificate-bottom {
+  position: absolute;
+
+  left: 40px;
+  right: 40px;
+  bottom: 35px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 25px;
+
+  padding-top: 20px;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.07);
+
+  z-index: 2;
+}
+
+.certificate-skills {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+}
+
+.certificate-skills span {
+  padding: 6px 9px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  color: var(--text-muted);
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 0.48rem;
+
+  letter-spacing: 0.02em;
+
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.certificate-skills span:hover {
+  color: var(--text-primary);
+
+  border-color:
+    rgba(34, 211, 238, 0.25);
+
+  transform: translateY(-2px);
+}
+
+.certificate-arrow {
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  color: var(--text-secondary);
+
+  transition:
+    color 0.35s ease,
+    border-color 0.35s ease,
+    transform 0.35s ease;
+}
+
+.certificate-card:hover .certificate-arrow {
+  color: var(--cyan);
+
+  border-color:
+    rgba(34, 211, 238, 0.3);
+
+  transform:
+    translate(3px, -3px);
+}
+
+/* =========================================================
+   BOTTOM ACCENT LINE
+========================================================= */
+
+.certificate-line {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 0;
+  height: 1px;
+
+  background: var(--cyan);
+
+  transition: width 0.6s ease;
+}
+
+.certificate-card:hover .certificate-line {
+  width: 100%;
+}
+
+/* =========================================================
+   SIDE PANEL
+========================================================= */
+
+.certifications-side {
+  position: relative;
+
+  min-height: 390px;
+
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  border: 1px solid var(--border);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.025),
+      rgba(255, 255, 255, 0.008)
+    );
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.certifications-side:hover {
+  transform: translateY(-4px);
+
+  border-color:
+    rgba(255, 255, 255, 0.17);
+}
+
+.certifications-side::before {
+  content: "";
+
+  position: absolute;
+
+  width: 250px;
+  height: 250px;
+
+  right: -125px;
+  top: -125px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(34, 211, 238, 0.07),
+      transparent 70%
+    );
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   SIDE TOP
+========================================================= */
+
+.certifications-side-top {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  color: var(--text-muted);
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 0.5rem;
+
+  letter-spacing: 0.14em;
+}
+
+.certifications-side-top i {
+  color: var(--text-secondary);
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.certifications-side:hover .certifications-side-top i {
+  color: var(--cyan);
+
+  transform: translate(3px, -3px);
+}
+
+/* =========================================================
+   SYMBOL
+========================================================= */
+
+.certifications-side-symbol {
+  position: relative;
+
+  width: 105px;
+  height: 105px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin: 58px 0 42px;
+
+  border: 1px solid rgba(34, 211, 238, 0.16);
+
+  color: var(--cyan);
+
+  font-size: 1.8rem;
+
+  transition:
+    transform 0.45s ease,
+    border-color 0.4s ease;
+}
+
+.certifications-side-symbol::before,
+.certifications-side-symbol::after {
+  content: "";
+
+  position: absolute;
+
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.certifications-side-symbol::before {
+  inset: 10px;
+}
+
+.certifications-side-symbol::after {
+  inset: -12px;
+
+  border-color:
+    rgba(34, 211, 238, 0.035);
+}
+
+.certifications-side:hover .certifications-side-symbol {
+  transform: rotate(4deg);
+
+  border-color:
+    rgba(34, 211, 238, 0.3);
+}
+
+/* =========================================================
+   SIDE CONTENT
+========================================================= */
+
+.certifications-side-content {
+  position: relative;
+  z-index: 2;
+}
+
+.certifications-side-content > span {
+  color: var(--text-muted);
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 0.48rem;
+
+  letter-spacing: 0.14em;
+}
+
+.certifications-side-content h3 {
+  margin: 14px 0 0;
+
+  color: var(--text-primary);
+
+  font-size: 2rem;
+  font-weight: 500;
+
+  line-height: 1.05;
+
+  letter-spacing: -0.055em;
+}
+
+.certifications-side-content p {
+  max-width: 290px;
+
+  margin: 18px 0 0;
+
+  color: var(--text-muted);
+
+  font-size: 0.72rem;
+
+  line-height: 1.75;
+}
+
+/* =========================================================
+   SIDE LINE
+========================================================= */
+
+.certifications-side-line {
+  width: 100%;
+  height: 1px;
+
+  margin: 27px 0 20px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
+}
+
+/* =========================================================
+   SIDE STACK
+========================================================= */
+
+.certifications-side-stack {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+}
+
+.certifications-side-stack span {
+  color: var(--text-muted);
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 0.46rem;
+
+  letter-spacing: 0.08em;
+
+  transition: color 0.3s ease;
+}
+
+.certifications-side-stack span:hover {
+  color: var(--cyan);
+}
+
+/* =========================================================
+   BOTTOM LEARNING STRIP
+========================================================= */
+
+.certifications-bottom {
+  display: flex;
+
+  align-items: center;
+
+  gap: 30px;
+
+  margin-top: 42px;
+
+  padding-top: 22px;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.07);
+}
+
+.certifications-bottom-label {
+  flex-shrink: 0;
+
+  color: var(--text-muted);
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 0.5rem;
+
+  letter-spacing: 0.14em;
+}
+
+.certifications-bottom-content {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  color: var(--text-secondary);
+
+  font-size: 0.72rem;
+}
+
+.certifications-bottom-content i {
+  color: var(--cyan);
+
+  font-size: 0.62rem;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991.98px) {
+  .certifications-heading {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+
+    margin-bottom: 55px;
+  }
+
+  .certifications-heading .section-description {
+    justify-self: start;
+  }
+
+  .certifications-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .certifications-side {
+    min-height: auto;
+  }
+
+  .certifications-side-symbol {
+    margin-top: 55px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767.98px) {
+  .certifications-background-text {
+    top: 12%;
+    right: -25%;
+
+    font-size: 7rem;
+  }
+
+  .certificate-card {
+    min-height: 450px;
+
+    padding: 27px 22px;
+
+    transform: none;
+  }
+
+  .certificate-card:hover {
+    transform: translateY(-3px);
+  }
+
+  .certificate-pointer-glow {
+    display: none;
+  }
+
+  .certificate-header {
+    display: block;
+
+    padding-right: 30px;
+  }
+
+  .certificate-status {
+    margin-top: 12px;
+  }
+
+  .certificate-main {
+    grid-template-columns: 55px minmax(0, 1fr);
+
+    gap: 18px;
+
+    margin-top: 55px;
+  }
+
+  .certificate-symbol {
+    width: 50px;
+    height: 50px;
+
+    font-size: 1.1rem;
+  }
+
+  .certificate-content h3 {
+    font-size: 1.7rem;
+  }
+
+  .certificate-provider {
+    font-size: 0.76rem;
+  }
+
+  .certificate-content p {
+    font-size: 0.76rem;
+  }
+
+  .certificate-bottom {
+    left: 22px;
+    right: 22px;
+    bottom: 25px;
+
+    align-items: flex-end;
+  }
+
+  .certificate-skills {
+    gap: 6px;
+  }
+
+  .certificate-skills span {
+    padding: 5px 7px;
+
+    font-size: 0.44rem;
+  }
+
+  .certificate-arrow {
+    display: none;
+  }
+
+  .certifications-side {
+    padding: 24px;
+  }
+
+  .certifications-side-symbol {
+    margin: 60px 0 40px;
+  }
+
+  .certifications-side-content h3 {
+    font-size: 1.8rem;
+  }
+
+  .certifications-bottom {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 14px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+  .certificate-card {
+    min-height: 500px;
+
+    padding: 23px 18px;
+  }
+
+  .certificate-index {
+    top: 23px;
+    right: 20px;
+  }
+
+  .certificate-main {
+    grid-template-columns: 1fr;
+
+    margin-top: 48px;
+  }
+
+  .certificate-symbol {
+    width: 48px;
+    height: 48px;
+  }
+
+  .certificate-content h3 {
+    font-size: 1.55rem;
+  }
+
+  .certificate-content p {
+    margin-top: 17px;
+
+    font-size: 0.72rem;
+  }
+
+  .certificate-bottom {
+    left: 18px;
+    right: 18px;
+    bottom: 20px;
+  }
+
+  .certificate-skills span {
+    font-size: 0.42rem;
+  }
+
+  .certifications-side {
+    padding: 21px;
+  }
+
+  .certifications-side-symbol {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .certificate-card,
+  .certifications-side,
+  .certifications-side-symbol,
+  .certificate-symbol,
+  .certificate-pointer-glow {
+    transition: none;
+  }
+
+  .certificate-card {
+    opacity: 1;
+
+    transform: none;
+  }
+
+  .certificate-card:hover,
+  .certifications-side:hover {
+    transform: none;
+  }
+}
