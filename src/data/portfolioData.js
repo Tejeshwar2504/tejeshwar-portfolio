@@ -6,7 +6,7 @@ const portfolioData = {
       "Building responsive web applications with Python, Django, React.js and MySQL.",
     location: "Tamil Nadu, India",
     email: "tejeshtejesh188@gmail.com",
-    phone: "9345614991",
+    phone: "",
     github: "https://github.com/Tejeshwar2504",
     linkedin: "https://www.linkedin.com/in/tejeshwar-g-86561b281/",
     resume: "/resume/resume.pdf",
